@@ -1,0 +1,140 @@
+header {
+  padding: 1rem 3rem;
+  height: 60px;
+  display: flex;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+
+  @media screen and (max-width: 1000px) {
+    .logo-wrapper {
+      min-width: 165px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 645px) {
+    .logo-text {
+      display: none;
+    }
+    .logo-wrapper {
+      min-width: 35px;
+      min-height: 35px;
+      padding-right: 1rem;
+    }
+    .logo {
+      width: auto !important;
+    }
+  }
+
+  .search-wrapper {
+    min-width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 25px;
+
+    @media screen and (max-width: 1024px) {
+      min-width: 40%;
+    }
+
+    @media screen and (max-width: 450px) {
+      min-width: 45px;
+    }
+    .search {
+      border-radius: 5px;
+      height: 16px;
+      font-size: 16px;
+      padding: 16px;
+      min-width: 45px;
+      border: 1px solid #666;
+
+      @media screen and (max-width: 800px) {
+        margin-left: 0;
+      }
+    }
+
+    .clear-btn {
+      padding-top: 3px;
+      position: relative;
+      right: 40px;
+      min-height: 30px;
+      min-width: 30px;
+      border: none;
+      transition: 200ms;
+      background-color: rgba(0, 0, 0, 0);
+      cursor: pointer;
+    }
+    .clear-btn:hover {
+      border-radius: 30px;
+      background-color: rgba(102, 102, 102, 0.182);
+    }
+  }
+
+  .logo {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+
+    a {
+      width: 38px;
+      height: 38px;
+    }
+
+    .logo-text {
+      margin-left: 10px;
+    }
+  }
+
+  .header-cart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+
+    a {
+      text-decoration: none;
+    }
+
+    .cart {
+      min-width: 110px;
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: $activeColor;
+      border-radius: 30px;
+      color: #fff;
+      transition: all ease 0.3s;
+      div:first-child {
+        border-right: 1px solid #fff;
+      }
+      div {
+        height: 35px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        svg {
+          fill: #fff;
+          padding-right: 5px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    .cart:hover {
+      background-color: $activeColorHover;
+    }
+  }
+
+  *:focus {
+    outline: none;
+  }
+}

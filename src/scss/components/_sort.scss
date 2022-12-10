@@ -1,0 +1,42 @@
+.sort {
+  float: right;
+  margin: auto 0;
+  margin-left: auto;
+  padding-left: 1rem;
+
+  .sort-label {
+    cursor: pointer;
+
+    span {
+      border-bottom: 1px dashed #282c34;
+    }
+  }
+
+  .sort-popup {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 237px;
+
+    .active {
+      background-color: $activeColor !important;
+      color: #fff;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 3px 5px;
+        color: #fff;
+        transition: all ease 0.3s;
+      }
+
+      li:hover {
+        cursor: pointer;
+        background-color: $activeColorHoverAlpha !important;
+      }
+    }
+  }
+}

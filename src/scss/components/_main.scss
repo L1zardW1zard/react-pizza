@@ -1,0 +1,26 @@
+main {
+  padding: 1rem 3rem;
+
+  @media screen and (max-width: 800px) {
+    padding: 1rem;
+  }
+
+  > div {
+    margin-top: 1rem;
+  }
+
+  .content-top {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .pizza-not-found-wrapper {
+    font-size: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+}

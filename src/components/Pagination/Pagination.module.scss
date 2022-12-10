@@ -1,0 +1,43 @@
+@import "../../scss/variables";
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #666;
+
+    &:hover {
+      background-color: $activeColor;
+      color: #fff;
+    }
+  }
+
+  :global {
+    .disabled {
+      opacity: 0.3;
+    }
+    .next {
+      margin-right: 0;
+    }
+    .selected a {
+      color: #fff;
+      background-color: $activeColor;
+    }
+  }
+}
