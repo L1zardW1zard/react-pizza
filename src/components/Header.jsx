@@ -17,7 +17,7 @@ const Header = () => {
     <header>
       <div className="logo">
         <div className="logo-wrapper">
-          <Link to="/">
+          <Link to="/react-pizza">
             <img src={logo} alt="Logo" />
           </Link>
 

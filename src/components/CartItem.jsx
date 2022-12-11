@@ -1,17 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { addItem, removeOneItem } from "../redux/slieces/cartSlice";
 
-export default function CartItem({
-  id,
-  imageUrl,
-  price,
-  title,
-  type,
-  size,
-  amount,
-}) {
+export default function CartItem({ id, imageUrl, price, title, type, size, amount }) {
   const dispatch = useDispatch();
   const item = { id, imageUrl, price, title, type, size };
 

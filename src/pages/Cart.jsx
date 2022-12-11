@@ -23,9 +23,13 @@ export default function Cart() {
           </button>
         </div>
         <div className="cart-items">
-          {items.map((item, i) => {
-            return <CartItem key={i} {...item} />;
-          })}
+          {items.length === 0 ? (
+            <div className="cart-message">Pizza not found</div>
+          ) : (
+            items.map((item, i) => {
+              return <CartItem key={i} {...item} />;
+            })
+          )}
         </div>
         <div className="cart-bottom">
           <div className="bottom-info-wrapper">
@@ -38,7 +42,7 @@ export default function Cart() {
           </div>
           <div className="bottom-buttons">
             <button className="back-btn">
-              <Link to="/">&#10092; Назад</Link>
+              <Link to="/react-pizza">&#10092; Назад</Link>
             </button>
             <button className="pay-btn">Опалатить &#10093;</button>
           </div>

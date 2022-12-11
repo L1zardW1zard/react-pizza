@@ -3,11 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 
-import {
-  setCategoryId,
-  setCurrentPage,
-  setFilters,
-} from "../redux/slieces/filterSlice";
+import { setCategoryId, setCurrentPage, setFilters } from "../redux/slieces/filterSlice";
 
 import { fetchPizzas } from "../redux/slieces/pizzaSlice";
 
@@ -22,9 +18,7 @@ const Home = () => {
   const itemsPerPageLimit = 4;
   const hasQuery = React.useRef(false);
 
-  const { categoryId, currentPage, sort, searchValue } = useSelector(
-    (state) => state.filter
-  );
+  const { categoryId, currentPage, sort, searchValue } = useSelector((state) => state.filter);
   const { items, status } = useSelector((state) => state.pizza);
   const categoriesTypes = ["Все", "Мясные", "Гриль", "Острые", "Закрытые"];
 
@@ -43,13 +37,11 @@ const Home = () => {
   React.useEffect(() => {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
-      const sort = sortTypes.find(
-        (obj) => obj.sortName === params.sortName && obj.order === params.order
-      );
+      const sort = sortTypes.find((obj) => obj.sortName === params.sortName && obj.order === params.order);
       dispatch(setFilters({ ...params, sort }));
       hasQuery.current = true;
     }
-  }, []);
+  }, [dispatch]);
 
   React.useEffect(() => {
     if (!hasQuery.current) {
@@ -68,10 +60,6 @@ const Home = () => {
     navigate("?" + queryString);
   }, [sort, categoryId, currentPage, navigate]);
 
-  React.useEffect(() => {
-    console.log(items);
-  }, [searchValue]);
-
   const onClickCategory = (id) => {
     dispatch(setCategoryId(id));
   };
@@ -83,11 +71,7 @@ const Home = () => {
   return (
     <>
       <div className="content-top">
-        <Categories
-          index={categoryId}
-          setIndex={onClickCategory}
-          categoriesTypes={categoriesTypes}
-        />
+        <Categories index={categoryId} setIndex={onClickCategory} categoriesTypes={categoriesTypes} />
         <Sort />
       </div>
       {status === "error" ? (
@@ -104,11 +88,7 @@ const Home = () => {
         </div>
       )}
 
-      <Pagination
-        onChangePage={onChangePage}
-        totalPageAmount={3}
-        itemsPerPageLimit={itemsPerPageLimit}
-      />
+      <Pagination onChangePage={onChangePage} totalPageAmount={3} itemsPerPageLimit={itemsPerPageLimit} />
     </>
   );
 };
